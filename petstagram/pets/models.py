@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.defaultfilters import slugify
+
 
 # Create your models here.
 
@@ -20,4 +22,13 @@ class Pet(models.Model):
 
     slug = models.SlugField(
         unique=True,
+        editable=False,
     )
+
+    def save(self, *args, **kwargs):
+
+        super().save(*args, **kwargs)
+        if not self.slug:
+            self.slug = slugify(f'{self.name}-{self.id}')
+
+        return super().save(*args, **kwargs)
