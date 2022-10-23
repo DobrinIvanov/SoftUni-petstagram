@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('photo', models.ImageField(upload_to='', validators=[petstagram.photos.validators.validate_file_size])),
                 ('description', models.TextField(blank=True, max_length=10, null=True, validators=[django.core.validators.MinLengthValidator(10)])),
                 ('location', models.CharField(blank=True, max_length=30, null=True)),
-                ('date_of_publications', models.DateField(auto_now=True)),
+                ('date_of_publication', models.DateField(auto_now=True)),
                 ('tagged_pets', models.ManyToManyField(blank=True, to='pets.pet')),
             ],
         ),
