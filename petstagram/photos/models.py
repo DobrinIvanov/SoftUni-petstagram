@@ -18,8 +18,7 @@ class Photo(models.Model):
     )
     description = models.TextField(
         max_length=MAX_DESCRIPTION_LENGTH,
-        min_length=MIN_DESCRIPTION_LENGTH,
-        validators=(MinLengthValidator(10),),
+        validators=(MinLengthValidator(MIN_DESCRIPTION_LENGTH),),
         blank=True,
         null=True,
     )
