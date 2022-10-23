@@ -20,11 +20,11 @@ def edit_pet(request, username, pet_name):
 
 def details_pet(request, username, pet_slug):
     pet = Pet.objects.get(slug=pet_slug)
-    pet_photos = pet.photo_set.all()
+    all_photos = pet.photo_set.all()
 
     context = {
         'pet': pet,
-        'pet_photos': pet_photos,
+        'all_photos': all_photos,
         'photos_count': pet.photos_set.count(),
     }
 
