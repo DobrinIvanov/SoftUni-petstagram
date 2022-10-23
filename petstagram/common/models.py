@@ -10,6 +10,9 @@ from petstagram.accounts.models import User
 class Comment(models.Model):
     MAX_COMMENT_LENGTH = 300
 
+    class Meta:
+        ordering = ["-date_time_publication"]
+
     text = models.CharField(
         max_length=MAX_COMMENT_LENGTH,
         null=False,
