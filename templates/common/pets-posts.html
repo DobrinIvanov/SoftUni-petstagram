@@ -45,7 +45,7 @@
             <div class="left">
                 <!-- Start Like Button -->
                 <span class="heart">
-                        <a href="{% url 'like' photo.id %} }}">
+                        <a href="{% url 'like' photo.id %}">
                             <!-- if user has liked the photo -->
                             {% if photo.like_set.all %}
                             <svg style="color: red"
@@ -93,7 +93,7 @@
                 <!-- End Like Button -->
 
                 <!-- Start Share Button -->
-                <a href="">
+                <a href="{% url 'share' photo.id %}">
                     <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626"
                          height="24" role="img" viewBox="0 0 48 48" width="24">
                         <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3
@@ -127,7 +127,7 @@
         <!-- End Tagged Pets -->
 
         <!-- Link to Photo Details Page -->
-        <a href="{% url "photos:details_photo" photo.id %}">
+        <a href="{% url "details_photo" photo.pk %}">
             <h4 class="details">See details</h4>
         </a>
 
