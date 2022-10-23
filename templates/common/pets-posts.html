@@ -25,7 +25,9 @@
                 </a>
                 <br>
                 <!-- if the photo has location -->
-                <span>Bansko, Bulgaria</span>
+                {% if photo.location %}
+                <span>{{ photo.location }}</span>
+                {% endif %}
             </h3>
         </div>
     </div>
@@ -111,28 +113,23 @@
 
 
         <!-- Start Tagged Pets -->
-        <!-- Link to First Tagged Pet Details Page-->
-        <a href="#">
+        <!-- Link to All Tagged Pet Details Page-->
+        {% for pet in photo.tagged_pets.all %}
+        <a href="{% url 'details_pet' "username" pet.slug %}">
             <p class="message">
-                <b>Sasho</b>
+                <b>{{ pet.name }}</b>
             </p>
         </a>
-
-        <!-- Link to Second Tagged Pet Details Page-->
-        <a href="#">
-            <p class="message">
-                <b>Some other fish</b>
-            </p>
-        </a>
+        {% endfor %}
         <!-- End Tagged Pets -->
 
         <!-- Link to Photo Details Page -->
-        <a href="#">
+        <a href="{% url 'details_photo' photo.pk %}">
             <h4 class="details">See details</h4>
         </a>
 
         <!-- Date of Publication -->
-        <h5 class="postTime">{{ photo.date_of_publication  }}</h5>
+        <h5 class="postTime">{{ photo.date_of_publication }}</h5>
 
         <!-- Start Add Comments Section -->
         <div class="addComments">
