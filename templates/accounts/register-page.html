@@ -6,17 +6,18 @@
         <div class="login-register-box">
             <h1>Petstagram</h1>
             <!-- Start Register Form -->
-            <form action="">
+            <form method='POST'>
                 {% csrf_token %}
                 {{ form.username.errors }}
-                {{ form.username| placeholder:'Username' }}
+                {{ form.username | placeholder:'Username' }}
                 {{ form.email.errors }}
-                {{ form.email|placeholder:'Email' }}
+                {{ form.email | placeholder:'Email' }}
                 {{ form.pasword1.errors }}
                 {{ form.pasword2.errors }}
-                {{ form.password1|placeholder: 'Password' }}
-                {{ form.password2|placeholder: 'Confirm password' }}
+                {{ form.password1 | placeholder:'Password' }}
+                {{ form.password2 | placeholder:'Confirm password' }}
                 <!-- Register Button -->
+                <input type="hidden" name="next" value="{{ next }}">
                 <button type="submit">Register</button>
             </form>
             <!-- End Register Form -->
