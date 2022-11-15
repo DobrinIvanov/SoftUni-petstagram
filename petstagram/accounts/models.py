@@ -7,7 +7,7 @@ from petstagram.accounts.validators import ValidateOnlyLetters
 
 
 # Create your models here.
-class PestagramUser(AbstractUser):
+class PetstagramUser(AbstractUser):
 
     MIN_LENGTH_NAME = 2
     MAX_LENGTH_NAME = 30
