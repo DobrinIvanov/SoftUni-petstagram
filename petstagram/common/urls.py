@@ -1,6 +1,6 @@
 from django.urls import path
 
-from petstagram.common.views import index, like_functionality, copy_link_to_clipboard, testing_view
+from petstagram.common.views import index, like_functionality, copy_link_to_clipboard, testing_view, add_comment
 
 urlpatterns = (
     path('', index, name='index'),

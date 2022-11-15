@@ -1,7 +1,6 @@
 from django.db import models
 
 from petstagram.photos.models import Photo
-from petstagram.accounts.models import User
 
 
 # Create your models here.
